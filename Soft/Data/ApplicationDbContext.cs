@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Abc.Facade;
@@ -13,6 +10,12 @@ namespace Soft.Data
             : base(options)
         {
         }
-        public DbSet<Abc.Facade.MeasureView> MeasureView { get; set; }
+        public DbSet<Abc.Facade.MeasureView> Measures { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<MeasureView>().ToTable(nameof(Measures));
+        }
     }
 }

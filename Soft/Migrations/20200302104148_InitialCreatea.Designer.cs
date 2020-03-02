@@ -9,14 +9,14 @@ using Soft.Data;
 namespace Abc.Soft.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200302094646_InitialCreatea")]
+    [Migration("20200302104148_InitialCreatea")]
     partial class InitialCreatea
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.1");
+                .HasAnnotation("ProductVersion", "3.1.2");
 
             modelBuilder.Entity("Abc.Facade.MeasureView", b =>
                 {
@@ -40,7 +40,7 @@ namespace Abc.Soft.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MeasureView");
+                    b.ToTable("Measures");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

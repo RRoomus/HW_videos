@@ -23,7 +23,7 @@ namespace Abc.Soft.Areas.Quantity.Pages.Measures
 
         public async Task OnGetAsync()
         {
-            MeasureView = await _context.MeasureView.ToListAsync();
+            MeasureView = await _context.Measures.ToListAsync();
         }
     }
 }

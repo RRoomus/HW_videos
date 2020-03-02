@@ -28,7 +28,7 @@ namespace Abc.Soft.Areas.Quantity.Pages.Measures
                 return NotFound();
             }
 
-            MeasureView = await _context.MeasureView.FirstOrDefaultAsync(m => m.Id == id);
+            MeasureView = await _context.Measures.FirstOrDefaultAsync(m => m.Id == id);
 
             if (MeasureView == null)
             {

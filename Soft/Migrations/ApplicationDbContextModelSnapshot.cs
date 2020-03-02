@@ -14,7 +14,7 @@ namespace Abc.Soft.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.1");
+                .HasAnnotation("ProductVersion", "3.1.2");
 
             modelBuilder.Entity("Abc.Facade.MeasureView", b =>
                 {
@@ -38,7 +38,7 @@ namespace Abc.Soft.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MeasureView");
+                    b.ToTable("Measures");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

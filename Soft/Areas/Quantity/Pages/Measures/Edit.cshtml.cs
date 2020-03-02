@@ -30,7 +30,7 @@ namespace Abc.Soft.Areas.Quantity.Pages.Measures
                 return NotFound();
             }
 
-            MeasureView = await _context.MeasureView.FirstOrDefaultAsync(m => m.Id == id);
+            MeasureView = await _context.Measures.FirstOrDefaultAsync(m => m.Id == id);
 
             if (MeasureView == null)
             {
@@ -71,7 +71,7 @@ namespace Abc.Soft.Areas.Quantity.Pages.Measures
 
         private bool MeasureViewExists(string id)
         {
-            return _context.MeasureView.Any(e => e.Id == id);
+            return _context.Measures.Any(e => e.Id == id);
         }
     }
 }
