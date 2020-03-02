@@ -10,6 +10,7 @@ namespace Soft.Data
             : base(options)
         {
         }
+
         public DbSet<Abc.Facade.MeasureView> Measures { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
