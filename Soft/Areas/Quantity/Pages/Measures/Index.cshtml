@@ -19,16 +19,20 @@
                 @Html.DisplayNameFor(model => model.Items[0].Code)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Items[0].Name)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Items[0].Name)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Items[0].Definition)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Items[0].ValidTo)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    @Html.DisplayNameFor(model => model.Items[0].ValidFrom)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Items[0].ValidFrom)
+                @Html.DisplayNameFor(model => model.Items[0].ValidTo)
             </th>
             <th></th>
         </tr>

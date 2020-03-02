@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Abc.Data.Quantity;
 using Abc.Domain.Quantity;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +11,7 @@ namespace Abc.Infra.Quantity
     public class MeasuresRepository : IMeasuresRepository
     {
         private readonly QuantityDbContext db;
+        public string SortOrder { get; set; }
 
         public MeasuresRepository(QuantityDbContext c)
         {
@@ -33,10 +36,31 @@ namespace Abc.Infra.Quantity
 
         public async Task<List<Measure>> Get()
         {
-            var l = await db.Measures.ToListAsync();
-            var list = new List<Measure>();
-            foreach (var e in l) list.Add(new Measure(e));
-            return list;
+            var list = await createsorted().ToListAsync();
+
+            return list.Select(e => new Measure(e)).ToList();
+        }
+
+        private IQueryable<MeasureData> createsorted()
+        {
+            IQueryable<MeasureData> measures = from s in db.Measures select s;
+
+            switch (SortOrder)
+            {
+                case "name_desc":
+                    measures = measures.OrderByDescending(s => s.Name);
+                    break;
+                case "Date":
+                    measures = measures.OrderBy(s => s.ValidFrom);
+                    break;
+                case "data_desc":
+                    measures = measures.OrderByDescending(s => s.ValidFrom);
+                    break;
+                default:
+                    measures = measures.OrderBy(s => s.Name);
+                    break;
+            }
+            return measures.AsNoTracking();
         }
 
         public async Task<Measure> Get(string id)

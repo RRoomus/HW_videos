@@ -11,9 +11,15 @@ namespace Abc.Soft.Areas.Quantity.Pages.Measures
     {
         public IndexModel(IMeasuresRepository r) : base(r) { }
 
-        public async Task OnGetAsync()
+        public string NameSort { get; set; }
+        public string DateSort { get; set; }
+
+        public async Task OnGetAsync(string sortOrder)
         {
-            var l = await data.Get();
+            NameSort = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+            db.SortOrder = sortOrder;
+            var l = await db.Get();
             Items = new List<MeasureView>();
             foreach (var e in l)
             {
