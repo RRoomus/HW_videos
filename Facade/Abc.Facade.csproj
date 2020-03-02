@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Description>																										</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Abc.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Quantity\" />
+  </ItemGroup>
+</Project>
