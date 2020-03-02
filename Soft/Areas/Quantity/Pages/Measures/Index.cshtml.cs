@@ -1,29 +1,24 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using Abc.Facade;
-using Soft.Data;
+using Abc.Pages.Quantity;
+using Abc.Domain.Quantity;
+using Abc.Facade.Quantity;
 
 namespace Abc.Soft.Areas.Quantity.Pages.Measures
 {
-    public class IndexModel : PageModel
+    public class IndexModel : MeasuresPage
     {
-        private readonly ApplicationDbContext _context;
-
-        public IndexModel(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
-        public IList<MeasureView> MeasureView { get;set; }
+        public IndexModel(IMeasuresRepository r) : base(r) { }
 
         public async Task OnGetAsync()
         {
-            MeasureView = await _context.Measures.ToListAsync();
+            var l = await data.Get();
+            Items = new List<MeasureView>();
+            foreach (var e in l)
+            {
+                Items.Add(MeasureViewFactory.Create(e));
+            }
         }
     }
 }

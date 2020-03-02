@@ -33,7 +33,10 @@ namespace Abc.Infra.Quantity
 
         public async Task<List<Measure>> Get()
         {
-            throw new NotImplementedException();
+            var l = await db.Measures.ToListAsync();
+            var list = new List<Measure>();
+            foreach (var e in l) list.Add(new Measure(e));
+            return list;
         }
 
         public async Task<Measure> Get(string id)

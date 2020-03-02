@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Abc.Facade;
+using Abc.Infra.Quantity;
 
 namespace Soft.Data
 {
@@ -11,12 +11,10 @@ namespace Soft.Data
         {
         }
 
-        public DbSet<Abc.Facade.MeasureView> Measures { get; set; }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.Entity<MeasureView>().ToTable(nameof(Measures));
+            QuantityDbContext.InitializeTables(builder);
         }
     }
 }
