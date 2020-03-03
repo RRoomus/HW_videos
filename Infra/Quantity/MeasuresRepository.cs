@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Abc.Data.Quantity;
 using Abc.Domain.Quantity;
+using Infra;
 using Microsoft.EntityFrameworkCore;
 
 namespace Abc.Infra.Quantity
@@ -13,6 +15,10 @@ namespace Abc.Infra.Quantity
         private readonly QuantityDbContext db;
         public string SortOrder { get; set; }
         public string SearchString { get; set; }
+        public int PageSize { get; set; } = 1;
+        public int PageIndex { get; set; } = 1;
+        public bool HasNextPage { get; set; }
+        public bool HasPreviousPage { get; set; }
 
         public MeasuresRepository(QuantityDbContext c)
         {
@@ -37,9 +43,18 @@ namespace Abc.Infra.Quantity
 
         public async Task<List<Measure>> Get()
         {
-            var list = await createFiltered(createsorted()).ToListAsync();
+            var list = await createPaged(createFiltered(createsorted()));
+
+            HasNextPage = list.HasNextPage;
+            HasPreviousPage = list.HasPreviousPage;
 
             return list.Select(e => new Measure(e)).ToList();
+        }
+
+        private async Task<PaginatedList<MeasureData>> createPaged(IQueryable<MeasureData> dataSet)
+        {
+            return await PaginatedList<MeasureData>.CreateAsync(
+                dataSet, PageIndex, this.PageSize);
         }
 
         private IQueryable<MeasureData> createFiltered(IQueryable<MeasureData> set)
