@@ -10,15 +10,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Abc.Infra.Quantity
 {
-    public class MeasuresRepository : IMeasuresRepository
+    public class MeasuresRepository : PaginatedRepository<Measure>, IMeasuresRepository
     {
-        private readonly QuantityDbContext db;
-        public string SortOrder { get; set; }
-        public string SearchString { get; set; }
+        protected internal QuantityDbContext db;
         public int PageSize { get; set; } = 1;
-        public int PageIndex { get; set; } = 1;
-        public bool HasNextPage { get; set; }
-        public bool HasPreviousPage { get; set; }
 
         public MeasuresRepository(QuantityDbContext c)
         {
