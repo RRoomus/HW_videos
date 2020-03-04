@@ -1,20 +1,23 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
-    public abstract class BaseTest<TClass, TBaseClass> where TClass : new()
+    public abstract class BaseTest<TClass, TBaseClass>
     {
-        [TestMethod]
-        public void CanCreateTest()
+        protected TClass obj;
+        protected Type type;
+
+        [TestInitialize]
+        public virtual void TestInitialize()
         {
-            Assert.IsNotNull(new TClass());
+            type = typeof(TClass);
         }
 
         [TestMethod]
         public void IsInheritedTest()
         {
-            Assert.AreEqual(typeof(TBaseClass), new TClass()
-                .GetType().BaseType);
+            Assert.AreEqual(typeof(TBaseClass), type.BaseType);
         }
     }
 }
