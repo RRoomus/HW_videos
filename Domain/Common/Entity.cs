@@ -2,13 +2,10 @@
 
 namespace Abc.Domain.Common
 {
-    public abstract class Entity<T> where T: PeriodData 
+    public abstract class Entity<TData> where TData: PeriodData 
     {
-        public T Data { get; }
+        public TData Data { get; internal set; }
 
-        protected Entity(T data)
-        {
-            Data = data;
-        }
+        protected Entity(TData data) => Data = data;
     }
 }
