@@ -65,7 +65,8 @@ namespace Abc.Infra.Quantity
                         || s.Id.Contains(SearchString)
                         || s.Definition.Contains(SearchString)
                         || s.ValidFrom.ToString().Contains(SearchString)
-                        || s.ValidTo.ToString().Contains(SearchString));
+                        || s.ValidTo.ToString().Contains(SearchString)
+                );
 
         }
 
