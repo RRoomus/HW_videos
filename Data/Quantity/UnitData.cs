@@ -2,7 +2,7 @@
 
 namespace Abc.Data.Quantity
 {
-    public class UnitData : DefinedEntityData
+    public class UnitData : NamedEntityData
     {
         public string MeasureId { get; set; }
     }
