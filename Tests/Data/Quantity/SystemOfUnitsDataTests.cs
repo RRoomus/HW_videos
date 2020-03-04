@@ -8,5 +8,6 @@ namespace Tests.Data.Quantity
     [TestClass]
     public class SystemOfUnitsDataTests : SealedClassTest<SystemOfUnitsData, DefinedEntityData>
     {
+
     }
 }

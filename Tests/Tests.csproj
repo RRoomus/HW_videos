@@ -25,5 +25,6 @@
     <ProjectReference Include="..\Infra\Abc.Infra.csproj" />
     <ProjectReference Include="..\Pages\Abc.Pages.csproj" />
     <ProjectReference Include="..\Soft\Abc.Soft.csproj" />
+    <ProjectReference Include="..\..\..\Downloads\Aids\Abc.Aids.csproj" />
   </ItemGroup>
 </Project>

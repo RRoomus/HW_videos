@@ -19,7 +19,7 @@ namespace Tests.Data.Common
         [TestMethod]
         public void DefinitionTest()
         {
-            IsNullableProperty(() => obj.Definition, x => obj.Definition = x, () => "aaaa");
+            IsNullableProperty(() => obj.Definition, x => obj.Definition = x);
         }
     }
 }

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Soft", "Soft\Abc.Soft.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{3C897E9F-A57A-4EEA-9079-72174842849D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Aids", "..\..\Downloads\Aids\Abc.Aids.csproj", "{A3AC7CD2-94E0-440C-BE23-A21DA903B876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,5 +51,9 @@ Global
 		{3C897E9F-A57A-4EEA-9079-72174842849D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C897E9F-A57A-4EEA-9079-72174842849D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C897E9F-A57A-4EEA-9079-72174842849D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3AC7CD2-94E0-440C-BE23-A21DA903B876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AC7CD2-94E0-440C-BE23-A21DA903B876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AC7CD2-94E0-440C-BE23-A21DA903B876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AC7CD2-94E0-440C-BE23-A21DA903B876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
