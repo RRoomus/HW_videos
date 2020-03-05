@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Abc.Infra.Quantity
 {
-    public class MeasuresRepository : PaginatedRepository<Measure, MeasureData>, IMeasuresRepository
+    public class MeasuresRepository : UniqueEntityRepository<Measure, MeasureData>, IMeasuresRepository
     {
         public MeasuresRepository(QuantityDbContext c) : base(c, c.Measures) { }
 
