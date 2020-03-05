@@ -48,14 +48,38 @@ namespace Abc.Infra.Quantity
 
             switch (SortOrder)
             {
-                case "name_desc":
+                case "Name_desc":
                     measures = measures.OrderByDescending(s => s.Name);
                     break;
-                case "Date":
+                case "ValidFrom":
                     measures = measures.OrderBy(s => s.ValidFrom);
                     break;
-                case "data_desc":
+                case "ValidFrom_desc":
                     measures = measures.OrderByDescending(s => s.ValidFrom);
+                    break;
+                case "ValidTo":
+                    measures = measures.OrderBy(s => s.ValidTo);
+                    break;
+                case "ValidTo_desc":
+                    measures = measures.OrderByDescending(s => s.ValidTo);
+                    break;
+                case "Id":
+                    measures = measures.OrderBy(s => s.Id);
+                    break;
+                case "Id_desc":
+                    measures = measures.OrderByDescending(s => s.Id);
+                    break;
+                case "Definition":
+                    measures = measures.OrderBy(s => s.Definition);
+                    break;
+                case "Definition_desc":
+                    measures = measures.OrderByDescending(s => s.Definition);
+                    break;
+                case "Code":
+                    measures = measures.OrderBy(s => s.Code);
+                    break;
+                case "Code_desc":
+                    measures = measures.OrderByDescending(s => s.Code);
                     break;
                 default:
                     measures = measures.OrderBy(s => s.Name);

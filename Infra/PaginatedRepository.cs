@@ -15,7 +15,7 @@ namespace Abc.Infra
 
         public bool HasPreviousPage { get; set; }
 
-        public int PageSize { get; set; } = 1;
+        public int PageSize { get; set; } = 12;
 
         protected PaginatedRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
     }
