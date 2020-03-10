@@ -30,8 +30,8 @@ namespace Abc.Soft.Areas.Quantity.Pages.Measures
             string currentFilter, string searchString, int? pageIndex)
         {
             CurrentSort = sortOrder;
+            NameSort = string.IsNullOrEmpty(sortOrder) ? "Name_desc" : "Name";
             IdSort = sortOrder == "Id" ? "Id_desc" : "Id";
-            NameSort = string.IsNullOrEmpty(sortOrder) ? "Name_desc" : "";
             CodeSort = sortOrder == "Code" ? "Code_desc" : "Code";
             DefinitionSort = sortOrder == "Definition" ? "Definition_desc" : "Definition";
             ValidFromSort = sortOrder == "ValidFrom" ? "ValidFrom_desc" : "ValidFrom";

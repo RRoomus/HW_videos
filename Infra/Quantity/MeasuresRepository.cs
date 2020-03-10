@@ -46,45 +46,7 @@ namespace Abc.Infra.Quantity
         {
             IQueryable<MeasureData> measures = from s in dbSet select s;
 
-            switch (SortOrder)
-            {
-                case "Name_desc":
-                    measures = measures.OrderByDescending(s => s.Name);
-                    break;
-                case "ValidFrom":
-                    measures = measures.OrderBy(s => s.ValidFrom);
-                    break;
-                case "ValidFrom_desc":
-                    measures = measures.OrderByDescending(s => s.ValidFrom);
-                    break;
-                case "ValidTo":
-                    measures = measures.OrderBy(s => s.ValidTo);
-                    break;
-                case "ValidTo_desc":
-                    measures = measures.OrderByDescending(s => s.ValidTo);
-                    break;
-                case "Id":
-                    measures = measures.OrderBy(s => s.Id);
-                    break;
-                case "Id_desc":
-                    measures = measures.OrderByDescending(s => s.Id);
-                    break;
-                case "Definition":
-                    measures = measures.OrderBy(s => s.Definition);
-                    break;
-                case "Definition_desc":
-                    measures = measures.OrderByDescending(s => s.Definition);
-                    break;
-                case "Code":
-                    measures = measures.OrderBy(s => s.Code);
-                    break;
-                case "Code_desc":
-                    measures = measures.OrderByDescending(s => s.Code);
-                    break;
-                default:
-                    measures = measures.OrderBy(s => s.Name);
-                    break;
-            }
+            measures = setSorting(measures);
             return measures.AsNoTracking();
         }
     }
