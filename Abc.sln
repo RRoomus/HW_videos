@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Pages", "Pages\Abc.Page
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Soft", "Soft\Abc.Soft.csproj", "{0BAFD393-5E0A-41F0-A172-4E7F840A12B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{3C897E9F-A57A-4EEA-9079-72174842849D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Tests", "Tests\Abc.Tests.csproj", "{3C897E9F-A57A-4EEA-9079-72174842849D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Aids", "..\..\Downloads\Aids\Abc.Aids.csproj", "{A3AC7CD2-94E0-440C-BE23-A21DA903B876}"
 EndProject

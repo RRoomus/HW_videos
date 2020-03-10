@@ -1,16 +1,17 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 
-//[assembly: AssemblyTitle("Abc.Domain")]
-//[assembly: AssemblyDescription("")]
-//[assembly: AssemblyConfiguration("")]
-//[assembly: AssemblyCompany("")]
-//[assembly: AssemblyProduct("")]
-//[assembly: AssemblyCopyright("${AuthorCopyright}")]
-//[assembly: AssemblyTrademark("")]
-//[assembly: AssemblyCulture("")]
+/*[assembly: AssemblyTitle("Abc.Data")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("")]
+[assembly: AssemblyCopyright("${AuthorCopyright}")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]*/
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
@@ -23,7 +24,5 @@
 
 //[assembly: AssemblyDelaySign(false)]
 //[assembly: AssemblyKeyFile("")]
-[assembly: InternalsVisibleTo("Abc.Infra")]
 [assembly: InternalsVisibleTo("Abc.Tests")]
-
 
