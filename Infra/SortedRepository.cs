@@ -49,7 +49,9 @@ namespace Abc.Infra
         private string getName()
         {
             if (string.IsNullOrEmpty(SortOrder)) return string.Empty;
-            return SortOrder.Remove(SortOrder.IndexOf(descendingString, StringComparison.Ordinal));
+            var idx = SortOrder.IndexOf(descendingString, StringComparison.Ordinal);
+            if (idx > 0) return SortOrder.Remove(idx);
+            return SortOrder;
         }
 
         internal IOrderedQueryable<TData> setOrderBy(IQueryable<TData> data, Expression<Func<TData, object>> e)
