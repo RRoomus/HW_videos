@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Linq.Expressions;
 using Abc.Data.Common;
 using Abc.Domain.Common;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +22,27 @@ namespace Abc.Infra
             return query;
         }
 
-        protected internal virtual IQueryable<TData> addFiltering(IQueryable<TData> query) => query;
+        internal IQueryable<TData> addFiltering(IQueryable<TData> query)
+        {
+            if (string.IsNullOrEmpty(SearchString)) return query;
+            var expression = createWhereExpression();
+            return query.Where(expression);
+        }
+
+        internal Expression<Func<TData, bool>> createWhereExpression()
+        {
+            var param = Expression.Parameter(typeof(TData), "s");
+            Expression predicate = null;
+            foreach (var p in typeof(TData).GetProperties())
+            {
+                Expression body = Expression.Property(param, p);
+                if (p.PropertyType != typeof(string))
+                    body = Expression.Call(body, "ToString", null);
+                body = Expression.Call(body, "Contains", null, Expression.Constant(SearchString));
+                predicate = predicate is null ? body : Expression.Or(predicate, body);
+            }
+
+            return predicate is null ? null : Expression.Lambda<Func<TData, bool>>(predicate, param);
+        }
     }
 }
