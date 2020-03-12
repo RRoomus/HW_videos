@@ -8,8 +8,10 @@ namespace Abc.Domain.Common
 
         int PageSize { get; set; }
 
-        bool HasNextPage { get; set; }
+        int TotalPages { get; }
 
-        bool HasPreviousPage { get; set; }
+        bool HasNextPage { get; }
+
+        bool HasPreviousPage { get; }
     }
 }

@@ -19,10 +19,10 @@ namespace Abc.Facade
 
         [DataType(DataType.Date)]
         [DisplayName("Valid from")]
-        public DateTime ValidFrom { get; set; }
+        public DateTime ? ValidFrom { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayName("Valid to")]
-        public DateTime ValidTo { get; set; }
+        public DateTime ? ValidTo { get; set; }
     }
 }
