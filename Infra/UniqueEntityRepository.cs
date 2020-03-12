@@ -11,9 +11,6 @@ namespace Abc.Infra
     {
         protected UniqueEntityRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
-        protected override async Task<TData> getData(string id)
-        {
-            return await dbSet.FirstOrDefaultAsync(m => m.Id == id);
-        }
+        protected override async Task<TData> getData(string id) => await dbSet.FirstOrDefaultAsync(m => m.Id == id);
     }
 }

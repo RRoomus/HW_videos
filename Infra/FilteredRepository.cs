@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Abc.Data.Common;
 using Abc.Domain.Common;
 using Microsoft.EntityFrameworkCore;
@@ -21,9 +20,6 @@ namespace Abc.Infra
             return query;
         }
 
-        protected internal virtual IQueryable<TData> addFiltering(IQueryable<TData> query)
-        {
-            return query;
-        }
+        protected internal virtual IQueryable<TData> addFiltering(IQueryable<TData> query) => query;
     }
 }

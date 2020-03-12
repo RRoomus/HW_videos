@@ -11,13 +11,9 @@ namespace Abc.Infra
         where TDomain : Entity<TData>, new()
     {
         public int PageIndex { get; set; }
-
         public int TotalPages => getTotalPages(PageSize);
-
         public bool HasNextPage => PageIndex < TotalPages;
-
         public bool HasPreviousPage => PageIndex > 1;
-
         public int PageSize { get; set; } = 5;
 
         protected PaginatedRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
@@ -29,30 +25,14 @@ namespace Abc.Infra
             return pages;
         }
 
-        internal int countTotalPages(int count, in int pageSize)
-        {
-            return (int)Math.Ceiling(count / (double)pageSize);
-        }
+        internal int countTotalPages(int count, in int pageSize) => (int)Math.Ceiling(count / (double)pageSize);
 
-        internal int getItemsCount()
-        {
-            var query = base.createSqlQuery();
-            return query.CountAsync().Result;
-        }
+        internal int getItemsCount() => base.createSqlQuery().CountAsync().Result;
 
-        protected internal override IQueryable<TData> createSqlQuery()
-        {
-            var query = base.createSqlQuery();
-            query = addSkipAndTake(query);
-            return query;
-        }
+        protected internal override IQueryable<TData> createSqlQuery() => addSkipAndTake(base.createSqlQuery());
 
-        private IQueryable<TData> addSkipAndTake(IQueryable<TData> query)
-        {
-            var q = query.Skip(
-                (PageIndex - 1) * PageSize)
+        private IQueryable<TData> addSkipAndTake(IQueryable<TData> query) =>
+            query.Skip((PageIndex - 1) * PageSize)
                 .Take(PageSize);
-            return q;
-        }
     }
 }

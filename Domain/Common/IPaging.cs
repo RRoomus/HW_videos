@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Abc.Domain.Common
+﻿namespace Abc.Domain.Common
 {
     public interface IPaging
     {
