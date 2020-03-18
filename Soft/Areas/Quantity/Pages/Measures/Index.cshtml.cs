@@ -10,7 +10,7 @@ namespace Abc.Soft.Areas.Quantity.Pages.Measures
     public class IndexModel : MeasuresPage
     {
         public IndexModel(IMeasuresRepository r) : base(r) { }
-
+        
         public string CurrentSort { get; set; }
         public string NameSort { get; set; }
         public string ValidFromSort { get; set; }
@@ -25,7 +25,7 @@ namespace Abc.Soft.Areas.Quantity.Pages.Measures
 
         public string SearchString { get; set; }
         public string CurrentFilter { get; set; }
-
+        
         public async Task OnGetAsync(string sortOrder,
             string currentFilter, string searchString, int? pageIndex)
         {

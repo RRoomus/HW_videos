@@ -2,7 +2,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Abc.Pages.Quantity;
 using Abc.Domain.Quantity;
-using Abc.Facade.Quantity;
 
 namespace Abc.Soft.Areas.Quantity.Pages.Measures
 {
@@ -12,14 +11,13 @@ namespace Abc.Soft.Areas.Quantity.Pages.Measures
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
-            var o = await db.Get(id);
-            Item = MeasureViewFactory.Create(o);
+            await getObject(id);
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(string id)
         {
-            await db.Delete(id);
+            await deleteObject(id);
             return RedirectToPage("./Index");
         }
     }
