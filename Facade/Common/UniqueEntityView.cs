@@ -1,8 +1,10 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
+
 namespace Abc.Facade.Common
 {
-    public class UniqueEntityView
+    public abstract class UniqueEntityView : PeriodView
     {
-        
+        [Required]
+        public string Id { get; set; }
     }
 }

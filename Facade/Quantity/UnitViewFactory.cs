@@ -1,28 +1,29 @@
 ﻿using Abc.Domain.Quantity;
-using Abc.Data.Quantity;
 
 namespace Abc.Facade.Quantity
 {
-    public static class MeasureViewFactory
+    public static class UnitViewFactory
     {
-        public static Measure Create(MeasureView v)
+        public static Unit Create(UnitView v)
         {
-            var d = new MeasureData
+            var o = new Unit()
             {
+                Data = {
                 Id = v.Id,
                 Name = v.Name,
                 Code = v.Code,
                 Definition = v.Definition,
                 ValidFrom = v.ValidFrom,
                 ValidTo = v.ValidTo
+                }
             };
 
-            return new Measure(d);
+            return o;
         }
 
-        public static MeasureView Create(Measure o)
+        public static UnitView Create(Unit o)
         {
-            var v = new MeasureView
+            var v = new UnitView
             {
                 Id = o.Data.Id,
                 Name = o.Data.Name,
@@ -31,8 +32,8 @@ namespace Abc.Facade.Quantity
                 ValidFrom = o.Data.ValidFrom,
                 ValidTo = o.Data.ValidTo
             };
+
             return v;
         }
     }
 }
-

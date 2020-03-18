@@ -46,8 +46,8 @@ namespace Abc.Infra.Quantity
         public static void Initialize(QuantityDbContext db)
         {
             if (db.Measures.Any()) return;
-            db.Measures.AddRangeAsync(measures);
-            db.SaveChangesAsync();
+            db.Measures.AddRange(measures);
+            db.SaveChanges();
         }
     }
 }
