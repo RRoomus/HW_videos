@@ -60,11 +60,13 @@ namespace Abc.Tests.Infra
                 var set = obj.addSorting(d);
                 Assert.IsNotNull(set);
                 Assert.AreNotEqual(d, set);
+                var str = set.Expression.ToString();
                 Assert.IsTrue(set.Expression.ToString().Contains($"Abc.Data.Quantity.MeasureData]).OrderByDescending(Param_0 => Convert(Param_0.{sortOrder}, Object))"));
                 obj.SortOrder = sortOrder;
                 set = obj.addSorting(d);
                 Assert.IsNotNull(set);
                 Assert.AreNotEqual(d, set);
+                str = set.Expression.ToString();
                 Assert.IsTrue(set.Expression.ToString().Contains($"Abc.Data.Quantity.MeasureData]).OrderBy(Param_0 => Convert(Param_0.{sortOrder}, Object))"));
             }
 
