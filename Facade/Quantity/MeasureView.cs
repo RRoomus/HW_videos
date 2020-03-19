@@ -2,7 +2,7 @@
 
 namespace Abc.Facade
 {
-    public class MeasureView : DefinedView
+    public sealed class MeasureView : DefinedView
     {
         
     }

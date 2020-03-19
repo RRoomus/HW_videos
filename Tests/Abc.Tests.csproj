@@ -20,6 +20,12 @@
     <Folder Include="Data\Common\" />
     <Folder Include="Infra\" />
     <Folder Include="Domain\" />
+    <Folder Include="Domain\Common\" />
+    <Folder Include="Domain\Quantity\" />
+    <Folder Include="Facade\" />
+    <Folder Include="Facade\Common\" />
+    <Folder Include="Facade\Quantity\" />
+    <Folder Include="Data\Money\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Abc.Data.csproj" />

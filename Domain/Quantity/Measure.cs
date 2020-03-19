@@ -5,7 +5,7 @@ using Abc.Domain.Common;
 
 namespace Abc.Domain.Quantity
 {
-    public class Measure : Entity<MeasureData>
+    public sealed class Measure : Entity<MeasureData>
     {
         public Measure() : this(null) { }
 
