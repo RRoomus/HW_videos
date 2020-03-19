@@ -47,7 +47,7 @@ namespace Abc.Tests.Infra
         [TestMethod]
         public void DescendingStringTest()
         {
-            var propertyName = GetMember.Name<testClass>(x => x.descendingString);
+            var propertyName = GetMember.Name<testClass>(x => x.DescendingString);
             IsReadOnlyProperty(obj, propertyName, "_desc");
         }
 
@@ -56,7 +56,7 @@ namespace Abc.Tests.Infra
         {
             void test(IQueryable<MeasureData> d, string sortOrder)
             {
-                obj.SortOrder = sortOrder + obj.descendingString;
+                obj.SortOrder = sortOrder + obj.DescendingString;
                 var set = obj.addSorting(d);
                 Assert.IsNotNull(set);
                 Assert.AreNotEqual(d, set);
@@ -92,12 +92,12 @@ namespace Abc.Tests.Infra
             testCreateExpression(GetMember.Name<MeasureData>(x => x.Name));
             testCreateExpression(GetMember.Name<MeasureData>(x => x.Code));
             testCreateExpression(GetMember.Name<MeasureData>(x => x.Definition));
-            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.ValidFrom), s + obj.descendingString);
-            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.ValidTo), s + obj.descendingString);
-            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.Id), s + obj.descendingString);
-            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.Name), s + obj.descendingString);
-            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.Code), s + obj.descendingString);
-            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.Definition), s + obj.descendingString);
+            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.ValidFrom), s + obj.DescendingString);
+            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.ValidTo), s + obj.DescendingString);
+            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.Id), s + obj.DescendingString);
+            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.Name), s + obj.DescendingString);
+            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.Code), s + obj.DescendingString);
+            testCreateExpression(s = GetMember.Name<MeasureData>(x => x.Definition), s + obj.DescendingString);
             testNullExpression(GetRandom.String());
             testNullExpression(string.Empty);
             testNullExpression(null);
@@ -151,12 +151,12 @@ namespace Abc.Tests.Infra
             test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Definition)), s);
             test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Code)), s);
             test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Id)), s);
-            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Name)), s + obj.descendingString);
-            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.ValidFrom)), s + obj.descendingString);
-            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.ValidTo)), s + obj.descendingString);
-            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Definition)), s + obj.descendingString);
-            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Code)), s + obj.descendingString);
-            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Id)), s + obj.descendingString);
+            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Name)), s + obj.DescendingString);
+            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.ValidFrom)), s + obj.DescendingString);
+            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.ValidTo)), s + obj.DescendingString);
+            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Definition)), s + obj.DescendingString);
+            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Code)), s + obj.DescendingString);
+            test(typeof(MeasureData).GetProperty(s = GetMember.Name<MeasureData>(x => x.Id)), s + obj.DescendingString);
 
         }
 
@@ -171,7 +171,7 @@ namespace Abc.Tests.Infra
             }
 
             test(s = GetRandom.String(), s);
-            test(s = GetRandom.String(), s + obj.descendingString);
+            test(s = GetRandom.String(), s + obj.DescendingString);
             test(string.Empty, string.Empty);
             test(string.Empty, null);
         }
@@ -181,7 +181,7 @@ namespace Abc.Tests.Infra
         {
             void test(IQueryable<MeasureData> d, Expression<Func<MeasureData, object>> e, string expected)
             {
-                obj.SortOrder = GetRandom.String() + obj.descendingString;
+                obj.SortOrder = GetRandom.String() + obj.DescendingString;
                 var set = obj.addOrderBy(d, e);
                 Assert.IsNotNull(set);
                 Assert.AreNotEqual(d, set);
@@ -214,7 +214,7 @@ namespace Abc.Tests.Infra
             }
 
             test(GetRandom.String(), false);
-            test(GetRandom.String() + obj.descendingString, true);
+            test(GetRandom.String() + obj.DescendingString, true);
             test(string.Empty, false);
             test(null, false);
         }

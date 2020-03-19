@@ -14,7 +14,7 @@ namespace Abc.Infra
     {
         public string SortOrder { get; set; }
 
-        public string descendingString => "_desc";
+        public string DescendingString => "_desc";
 
         protected SortedRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 
@@ -55,7 +55,7 @@ namespace Abc.Infra
         internal string getName()
         {
             if (string.IsNullOrEmpty(SortOrder)) return string.Empty;
-            var idx = SortOrder.IndexOf(descendingString, StringComparison.Ordinal);
+            var idx = SortOrder.IndexOf(DescendingString, StringComparison.Ordinal);
             if (idx > 0) return SortOrder.Remove(idx);
             return SortOrder;
         }
@@ -69,6 +69,6 @@ namespace Abc.Infra
             catch { return query; }
         }
 
-        internal bool isDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(descendingString);
+        internal bool isDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(DescendingString);
     }
 }
