@@ -10,19 +10,24 @@
         @RenderSection("Create")
     </p>
 
-<form asp-page="./Index" method="get">
-    <div class="form-Inline col-md-6">
-        <p>
-            Find by:
-            &nbsp;
-            <input class="form-control" type="text" name="SerachString" value="@Model.SearchString" />
-            &nbsp;
-            <input type="submit" value="Search" class="btn btn-light" /> |
-            &nbsp;
-            <a asp-page="./Index">Back to full List</a>
-        </p>
-    </div>
-</form>
+    <form asp-page="./Index" method="get">
+        <input type="hidden" name="FixedFilter" value="@Model.FixedFilter" />
+        <input type="hidden" name="FixedValue" value="@Model.FixedValue" />
+        <div class="form-Inline col-md-6">
+            <p>
+                Find by:
+                &nbsp;
+                <input class="form-control" type="text" name="SearchString" value="@Model.SearchString" />
+                &nbsp;
+                <input type="submit" value="Search" class="btn btn-light" /> |
+                &nbsp;
+                <a asp-page="./Index"
+                   asp-route-fixedFilter="@Model.FixedFilter"
+                   asp-route-fixedValue="@Model.FixedValue"
+                   >Back to full List</a>
+            </p>
+        </div>
+    </form>
 
 <p />
 
