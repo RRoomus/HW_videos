@@ -20,8 +20,8 @@ namespace Abc.Soft.Areas.Quantity.Pages.Units
         {
             FixedFilter = fixedFilter;
             FixedValue = fixedValue;
-            if (!await addObject()) return Page();
-            return Redirect($"/Quantity/Units/Index?fixedFilter={FixedFilter}&fixedValue={FixedValue}");
+            if (!await addObject(fixedFilter, fixedValue)) return Page();
+            return Redirect(IndexUrl);
         }
     }
 }

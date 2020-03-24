@@ -26,6 +26,15 @@ namespace Abc.Pages
         public abstract string ItemId { get; }
         public string PageTitle { get; set; }
         public string PageSubtitle => getPageSubtitle();
+        public string IndexUrl => getIndexUrl();
+        public string PageUrl => getPageUrl();
+
+        protected internal abstract string getPageUrl();
+
+        protected internal string getIndexUrl()
+        {
+            return $"{PageUrl}/Index?fixedFilter={FixedFilter}&fixedValue={FixedValue}";
+        }
 
         protected internal virtual string getPageSubtitle()
         {
@@ -58,8 +67,10 @@ namespace Abc.Pages
             get => db.FixedValue;
             set => db.FixedValue = value; }
 
-        protected internal async Task<bool> addObject()
+        protected internal async Task<bool> addObject(string fixedFilter, string fixedValue)
         {
+            FixedFilter = fixedFilter;
+            FixedValue = fixedValue;
             //TODO see viga tuleb lahendada
             // To protect from overposting attacks, please enable the specific properties you want to bind to, for
             // more details see https://aka.ms/RazorPagesCRUD.
@@ -78,8 +89,10 @@ namespace Abc.Pages
 
         protected internal abstract TDomain toObject(TView view);
 
-        protected internal async Task updateObject()
+        protected internal async Task updateObject(string fixedFilter, string fixedValue)
         {
+            FixedFilter = fixedFilter;
+            FixedValue = fixedValue;
             //TODO see viga tuleb lahendada
             // To protect from overposting attacks, please enable the specific properties you want to bind to, for
             // more details see https://aka.ms/RazorPagesCRUD.
@@ -87,16 +100,20 @@ namespace Abc.Pages
             await db.Update(toObject(Item));
         }
 
-        protected internal async Task getObject(string id)
+        protected internal async Task getObject(string id, string fixedFilter, string fixedValue)
         {
+            FixedFilter = fixedFilter;
+            FixedValue = fixedValue;
             var o = await db.Get(id);
             Item = toView(o);
         }
 
         protected internal abstract TView toView(TDomain obj);
 
-        protected internal async Task deleteObject(string id)
+        protected internal async Task deleteObject(string id, string fixedFilter, string fixedValue)
         {
+            FixedFilter = fixedFilter;
+            FixedValue = fixedValue;
             await db.Delete(id);
         }
 

@@ -26,6 +26,9 @@
     <Folder Include="Facade\Common\" />
     <Folder Include="Facade\Quantity\" />
     <Folder Include="Data\Money\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Pages\Quantity\" />
+    <Folder Include="Pages\Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Abc.Data.csproj" />
@@ -35,5 +38,8 @@
     <ProjectReference Include="..\Pages\Abc.Pages.csproj" />
     <ProjectReference Include="..\Soft\Abc.Soft.csproj" />
     <ProjectReference Include="..\..\..\Downloads\Aids\Abc.Aids.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Pages\Quantity\baseTestRepository.cs" />
   </ItemGroup>
 </Project>
