@@ -207,23 +207,23 @@ namespace Abc.Infra.Quantity
             initializeUnits(db);
         }
 
-        private static void initializeMeasures(QuantityDbContext db)
-        {
-            if (db.Measures.Count() != 0) return;
-            db.Measures.AddRange(measures);
-            db.SaveChanges();
-        }
-
         private static void initializeUnits(QuantityDbContext db)
         {
             if (db.Units.Count() != 0) return;
             db.Units.AddRange(timeUnits);
-            db.Units.AddRange(massUnits);
             db.Units.AddRange(lengthUnits);
+            db.Units.AddRange(massUnits);
             db.Units.AddRange(temperatureUnits);
-            db.Units.AddRange(currentUnits);
             db.Units.AddRange(substanceUnits);
             db.Units.AddRange(luminousUnits);
+            db.Units.AddRange(currentUnits);
+            db.SaveChanges();
+        }
+
+        private static void initializeMeasures(QuantityDbContext db)
+        {
+            if (db.Measures.Count() != 0) return;
+            db.Measures.AddRange(measures);
             db.SaveChanges();
         }
     }
