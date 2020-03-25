@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Abc.Pages.Extensions {
+namespace Abc.Pages.Extensions
+{
     public static class DetailsTableForHtmlExtension {
         public static IHtmlContent DetailsTableFor<TModel, TResult>(
             this IHtmlHelper<TModel> htmlHelper, Expression<Func<TModel, IList<TResult>>> expression, params Expression<Func<TResult, object>>[] properties) where TModel: PageModel{

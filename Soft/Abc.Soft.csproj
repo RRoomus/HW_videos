@@ -30,9 +30,6 @@
     <ProjectReference Include="..\Pages\Abc.Pages.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Downloads\Aids\Abc.Aids.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Quantity\" />

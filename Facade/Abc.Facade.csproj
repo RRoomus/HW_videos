@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Abc.Domain.csproj" />
-    <ProjectReference Include="..\..\..\Downloads\Aids\Abc.Aids.csproj" />
+    <ProjectReference Include="..\Aids\Abc.Aids.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Quantity\" />
