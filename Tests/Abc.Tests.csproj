@@ -41,5 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Pages\Quantity\baseTestRepository.cs" />
+    <Compile Remove="Pages\Extensions\htmlContentMock.cs" />
+    <Compile Remove="Pages\Extensions\htmlHelperMock.cs" />
   </ItemGroup>
 </Project>
