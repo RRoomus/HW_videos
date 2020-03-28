@@ -15,12 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Soft", "Soft\Abc.Soft.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Tests", "Tests\Abc.Tests.csproj", "{3C897E9F-A57A-4EEA-9079-72174842849D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E05D821D-D1DD-48FB-BA7E-88CB990F43C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Aids", "Aids\Abc.Aids.csproj", "{DB51BAE4-8A4F-4F67-BA64-5A6EAA387CD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D71A6C2D-9D4E-4286-AF68-9D39D259D969}"
 	ProjectSection(SolutionItems) = preProject
 		Time recording log.xlsx = Time recording log.xlsx
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abc.Aids", "Aids\Abc.Aids.csproj", "{DB51BAE4-8A4F-4F67-BA64-5A6EAA387CD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
