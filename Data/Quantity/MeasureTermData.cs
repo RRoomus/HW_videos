@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Abc.Data.Quantity
 {
-    public class MeasureTermData : CommonTermData
+    public sealed class MeasureTermData : CommonTermData
     {
         
     }
