@@ -29,11 +29,13 @@ namespace Abc.Infra
             return toDomainObjectsList(set);
         }
 
-        internal List<TDomain> toDomainObjectsList(List<TData> set) => set.Select(toDomainObject).ToList();
+        internal List<TDomain> toDomainObjectsList(List<TData> set)
+            => set.Select(toDomainObject).ToList();
 
         protected abstract internal TDomain toDomainObject(TData e);
 
-        internal async Task<List<TData>> runSqlQueryAsync(IQueryable<TData> query) => await query.AsNoTracking().ToListAsync();
+        internal async Task<List<TData>> runSqlQueryAsync(IQueryable<TData> query)
+            => await query.AsNoTracking().ToListAsync();
 
         protected internal virtual IQueryable<TData> createSqlQuery()
         {
@@ -55,11 +57,13 @@ namespace Abc.Infra
 
         public async Task Delete(string id)
         {
-            var d = await dbSet.FindAsync(id);
+            if (id is null) return;
 
-            if (d is null) return;
+            var v = await dbSet.FindAsync(id);
 
-            dbSet.Remove(d);
+            if (v is null) return;
+
+            dbSet.Remove(v);
             await db.SaveChangesAsync();
         }
 
@@ -72,24 +76,14 @@ namespace Abc.Infra
 
         public async Task Update(TDomain obj)
         {
-            db.Attach(obj.Data).State = EntityState.Modified;
+            if (obj is null) return;
+            var v = await dbSet.FindAsync(getId(obj));
+            if (v is null) return;
+            dbSet.Remove(v);
+            dbSet.Add(obj.Data);
+            await db.SaveChangesAsync();
+        }
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-
-            catch (DbUpdateConcurrencyException)
-            {
-                /*if (!MeasureViewExists(MeasureView.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }*/
-            }
-        }       
+        protected abstract string getId(TDomain entity);
     }
 }

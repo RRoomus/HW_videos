@@ -29,6 +29,7 @@
     <Folder Include="Pages\" />
     <Folder Include="Pages\Quantity\" />
     <Folder Include="Pages\Extensions\" />
+    <Folder Include="Infra\Quantity\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Abc.Data.csproj" />
