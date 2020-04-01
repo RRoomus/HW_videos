@@ -1,19 +1,17 @@
 ﻿using Abc.Aids;
 using Abc.Data.Quantity;
 using Abc.Domain.Quantity;
-using Abc.Facade;
 using Abc.Facade.Quantity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 namespace Abc.Tests.Facade.Quantity
 {
     [TestClass]
-    public class MeasureViewFactoryTests : BaseTests
+    public class UnitTermViewFactoryTests : BaseTests
     {
         [TestInitialize]
         public virtual void TestInitialize()
         {
-            type = typeof(MeasureViewFactory);
+            type = typeof(UnitTermViewFactory);
         }
 
         [TestMethod]
@@ -22,16 +20,16 @@ namespace Abc.Tests.Facade.Quantity
         [TestMethod]
         public void CreateObjectTest()
         {
-            var view = GetRandom.Object<MeasureView>();
-            var data = MeasureViewFactory.Create(view).Data;
+            var view = GetRandom.Object<UnitTermView>();
+            var data = UnitTermViewFactory.Create(view).Data;
             testArePropertyValuesEqual(view, data);
         }
 
         [TestMethod]
         public void CreateViewTest()
         {
-            var data = GetRandom.Object<MeasureData>();
-            var view = MeasureViewFactory.Create(new Measure(data));
+            var data = GetRandom.Object<UnitTermData>();
+            var view = UnitTermViewFactory.Create(new UnitTerm(data));
             testArePropertyValuesEqual(view, data);
         }
     }
