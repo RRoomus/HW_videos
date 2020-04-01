@@ -10,7 +10,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Abc.Tests.Infra
 {
     [TestClass]
-    public class UniqueEntityRepositoryTests
+    public class UniqueEntityRepositoryTests : AbstractClassTests<UniqueEntityRepository<Measure, MeasureData>,
+        PaginatedRepository<Measure, MeasureData>>
     {
         private MeasureData data;
 
