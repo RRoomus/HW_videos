@@ -39,7 +39,7 @@ namespace Abc.Tests.Infra
             var c = new QuantityDbContext(options);
             obj = new testClass(c, c.Measures);
             data = GetRandom.Object<MeasureData>();
-            count = GetRandom.UInt8(10, 30);
+            count = GetRandom.UInt8(20, 40);
             foreach(var p in c.Measures) c.Entry(p).State = EntityState.Deleted;
             addItems();
         }
@@ -63,8 +63,9 @@ namespace Abc.Tests.Infra
                 var actual = obj.HasNextPage;
                 Assert.AreEqual(expected, actual);
             }
+            testNextPage(0, true);
             testNextPage(1, true);
-            testNextPage(GetRandom.Int32(1, obj.TotalPages-1), true);
+            testNextPage(GetRandom.Int32(2, obj.TotalPages-1), true);
             testNextPage(obj.TotalPages, false);
         }
 
@@ -78,7 +79,9 @@ namespace Abc.Tests.Infra
                 Assert.AreEqual(expected, actual);
             }
             testPreviousPage(0, false);
-            testPreviousPage(GetRandom.Int32(1, obj.TotalPages-1), true);
+            testPreviousPage(1, false);
+            testPreviousPage(2, true);
+            testPreviousPage(GetRandom.Int32(2, obj.TotalPages), true);
             testPreviousPage(obj.TotalPages, true);
         }
 

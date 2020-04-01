@@ -31,6 +31,7 @@ namespace Abc.Tests.Infra
         public override void TestInitialize()
         {
             base.TestInitialize();
+
             var options = new DbContextOptionsBuilder<QuantityDbContext>()
                 .UseInMemoryDatabase("TestDb")
                 .Options;
