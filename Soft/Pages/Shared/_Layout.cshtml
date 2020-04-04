@@ -21,27 +21,31 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         @Html.DropDownNavigationMenuFor("File",
-                            new Link("CRM", "/Process/CRM"),
-                            new Link("Recruiting", "/Process/Recruiting"),
-                            new Link("Marketing", "/Process/Marketing"),
-                            new Link("Catalogs", "/Inventory/Catalogs"),
-                            new Link("Product Types", "/Inventory/Types"),
-                            new Link("Persons", "/Party/Persons"),
-                            new Link("Inventory", "/Inventory/Inventory"),
-                            new Link("Sales", "/Orders/Sales"),
-                            new Link("Organizations", "/Party/Organizations"),
-                            new Link("Purchasing", "/Orders/Purchasing"))
+                                                new Link("CRM", "/Process/CRM"),
+                                                new Link("Recruiting", "/Process/Recruiting"),
+                                                new Link("Marketing", "/Process/Marketing"),
+                                                new Link("Catalogs", "/Inventory/Catalogs"),
+                                                new Link("Product Types", "/Inventory/Types"),
+                                                new Link("Persons", "/Party/Persons"),
+                                                new Link("Inventory", "/Inventory/Inventory"),
+                                                new Link("Sales", "/Orders/Sales"),
+                                                new Link("Organizations", "/Party/Organizations"),
+                                                new Link("Purchasing", "/Orders/Purchasing"))
                         @Html.DropDownNavigationMenuFor("Data",
-                            new Link("Currencies", "/Money/Currencies"),
-                            new Link("Countries", "/Party/Countries"),
-                            new Link("Roles", "/Party/Roles"),
-                            new Link("Products", "/Inventory/Products"),
-                            new Link("Measures", "/Quantity/Measures"),
-                            new Link("Calculator", "/Quantity/Calculator"),
-                            new Link("Units", "/Quantity/Units"))
+                                                new Link("Currencies", "/Money/Currencies"),
+                                                new Link("Countries", "/Party/Countries"),
+                                                new Link("Roles", "/Party/Roles"),
+                                                new Link("Products", "/Inventory/Products"),
+                                                new Link("Measures", "/Quantity/Measures"),
+                                                new Link("Measure Terms", "/Quantity/MeasureTerms"),
+                                                new Link("System Of Units", "/Quantity/SystemOfUnits"),
+                                                new Link("Unit Factors", "/Quantity/UnitFactors"),
+                                                new Link("Unit Terms", "/Quantity/UnitTerms"),
+                                                new Link("Calculator", "/Quantity/Calculator"),
+                                                new Link("Units", "/Quantity/Units")),
                         @Html.DropDownNavigationMenuFor("Help",
-                            new Link("About", "/Index"),
-                            new Link("Privacy", "/Privacy"))
+                                                new Link("About", "/Index"),
+                                                new Link("Privacy", "/Privacy"))
                     </ul>
                 </div>
             </div>

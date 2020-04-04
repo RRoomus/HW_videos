@@ -39,5 +39,19 @@
     <Folder Include="Areas\Quantity\Pages\" />
     <Folder Include="Areas\Quantity\Pages\Measures\" />
     <Folder Include="Areas\Quantity\Pages\Units\" />
+    <Folder Include="Areas\Quantity\Pages\SystemOfUnits\" />
+    <Folder Include="Areas\Quantity\Pages\MeasureTerms\" />
+    <Folder Include="Areas\Quantity\Pages\UnitTerms\" />
+    <Folder Include="Areas\Quantity\Pages\UnitFactors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Areas\Quantity\Pages\MeasureTerms\Delete.cshtml" />
+    <Content Remove="Areas\Quantity\Pages\MeasureTerms\Details.cshtml" />
+    <Content Remove="Areas\Quantity\Pages\SystemOfUnits\Delete.cshtml" />
+    <Content Remove="Areas\Quantity\Pages\SystemOfUnits\Details.cshtml" />
+    <Content Remove="Areas\Quantity\Pages\UnitFactors\Delete.cshtml" />
+    <Content Remove="Areas\Quantity\Pages\UnitFactors\Details.cshtml" />
+    <Content Remove="Areas\Quantity\Pages\UnitTerms\Delete.cshtml" />
+    <Content Remove="Areas\Quantity\Pages\UnitTerms\Details.cshtml" />
   </ItemGroup>
 </Project>
