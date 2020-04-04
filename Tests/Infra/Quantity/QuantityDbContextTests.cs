@@ -70,7 +70,7 @@ namespace Abc.Tests.Infra.Quantity
             testEntity<SystemOfUnitsData>(builder);
             testEntity<MeasureTermData>(builder, x => x.TermId, x => x.MasterId);
             testEntity<MeasureData>(builder);
-            testEntity<UnitData>(builder);
+            testEntity<UnitData>(builder); 
             testEntity<UnitTermData>(builder, x => x.TermId, x => x.MasterId);
             testEntity<UnitFactorData>(builder, x =>x.UnitId, x=> x.SystemOfUnitsId);
         }
