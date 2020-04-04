@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Abc.Pages.Quantity;
 using Abc.Domain.Quantity;
 
-namespace Abc.Soft.Areas.Quantity.Pages.SystemOfUnits
+namespace Abc.Soft.Areas.Quantity.Pages.SystemsOfUnits
 {
     public class DeleteModel : SystemsOfUnitsPage
     {

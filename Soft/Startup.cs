@@ -33,6 +33,10 @@ namespace Abc.Soft
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddScoped<IMeasuresRepository, MeasuresRepository>();
             services.AddScoped<IUnitsRepository, UnitsRepository>();
+            services.AddScoped<IUnitTermsRepository, UnitTermsRepository>();
+            services.AddScoped<IMeasureTermsRepository, MeasureTermsRepository>();
+            services.AddScoped<ISystemOfUnitsRepository, SystemsOfUnitsRepository>();
+            services.AddScoped<IUnitFactorRepository, UnitFactorsRepository>();
             services.AddRazorPages();
             services.AddServerSideBlazor();
         }

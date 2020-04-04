@@ -2,11 +2,11 @@ using System.Threading.Tasks;
 using Abc.Pages.Quantity;
 using Abc.Domain.Quantity;
 
-namespace Abc.Soft.Areas.Quantity.Pages.UnitTerms
+namespace Abc.Soft.Areas.Quantity.Pages.SystemsOfUnits
 {
-    public class IndexModel : UnitTermsPage
+    public class IndexModel : SystemsOfUnitsPage
     {
-        public IndexModel(IUnitTermsRepository r) : base(r) { }
+        public IndexModel(ISystemOfUnitsRepository r) : base(r) { }
         
         public async Task OnGetAsync(string sortOrder,
             string currentFilter, string searchString, int? pageIndex, string fixedValue, string fixedFilter)

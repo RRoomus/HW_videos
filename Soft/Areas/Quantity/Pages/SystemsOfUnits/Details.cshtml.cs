@@ -4,7 +4,7 @@ using Abc.Pages.Quantity;
 using Abc.Domain.Quantity;
 using Abc.Facade.Quantity;
 
-namespace Abc.Soft.Areas.Quantity.Pages.SystemOfUnits
+namespace Abc.Soft.Areas.Quantity.Pages.SystemsOfUnits
 {
     public class DetailsModel : SystemsOfUnitsPage
     {
