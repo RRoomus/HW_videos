@@ -32,12 +32,12 @@ namespace Abc.Infra.Quantity
         private static void initialize(IEnumerable<Core.Units.Data> data, QuantityDbContext db)
         {
             foreach (var d in from d in data
-                let o = db.SystemsOfUnits.FirstOrDefaultAsync(m => m.Id == d.Id).GetAwaiter().GetResult()
-                where o is null
-                select d)
+                              let o = db.SystemsOfUnits.FirstOrDefaultAsync(m => m.Id == d.Id).GetAwaiter().GetResult()
+                              where o is null
+                              select d)
             {
                 db.SystemsOfUnits.Add(
-                    new SystemOfUnitsData
+                    new SystemsOfUnitsData
                     {
                         Id = d.Id,
                         Code = d.Code,
@@ -121,9 +121,9 @@ namespace Abc.Infra.Quantity
         private static void addUnits(IEnumerable<Core.Units.Data> units, string measureId, QuantityDbContext db)
         {
             foreach (var d in from d in units
-                let o = getItem(db.Units, d.Id)
-                where o is null
-                select d)
+                              let o = getItem(db.Units, d.Id)
+                              where o is null
+                              select d)
             {
                 db.Units.Add(
                     new UnitData

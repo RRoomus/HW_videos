@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Abc.Tests.Data.Quantity
 {
     [TestClass]
-    public class SystemOfUnitsDataTests : SealedClassTests<SystemOfUnitsData, DefinedEntityData>
+    public class SystemOfUnitsDataTests : SealedClassTests<SystemsOfUnitsData, DefinedEntityData>
     {
 
     }

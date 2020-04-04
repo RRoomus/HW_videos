@@ -67,7 +67,7 @@ namespace Abc.Tests.Infra.Quantity
             var o = new testClass(options);
             var builder = o.RunOnModelCreating();
             QuantityDbContext.InitializeTables(builder);
-            testEntity<SystemOfUnitsData>(builder);
+            testEntity<SystemsOfUnitsData>(builder);
             testEntity<MeasureTermData>(builder, x => x.TermId, x => x.MasterId);
             testEntity<MeasureData>(builder);
             testEntity<UnitData>(builder); 
@@ -82,7 +82,7 @@ namespace Abc.Tests.Infra.Quantity
         public void UnitsTest() => IsNullableProperty(obj, nameof(obj.Units), typeof(DbSet<UnitData>));
 
         [TestMethod]
-        public void SystemsOfUnitsTest() => IsNullableProperty(obj, nameof(obj.SystemsOfUnits), typeof(DbSet<SystemOfUnitsData>));
+        public void SystemsOfUnitsTest() => IsNullableProperty(obj, nameof(obj.SystemsOfUnits), typeof(DbSet<SystemsOfUnitsData>));
 
         [TestMethod]
         public void UnitFactorsTest() => IsNullableProperty(obj, nameof(obj.UnitFactors), typeof(DbSet<UnitFactorData>));

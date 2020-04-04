@@ -29,7 +29,7 @@ namespace Abc.Tests.Facade.Quantity
         [TestMethod]
         public void CreateViewTest()
         {
-            var data = GetRandom.Object<SystemOfUnitsData>();
+            var data = GetRandom.Object<SystemsOfUnitsData>();
             var view = SystemOfUnitsViewFactory.Create(new SystemOfUnits(data));
             testArePropertyValuesEqual(view, data);
         }

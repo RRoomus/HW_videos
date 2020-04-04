@@ -3,7 +3,7 @@ using Abc.Data.Common;
 
 namespace Abc.Data.Quantity
 {
-    public sealed class SystemOfUnitsData : DefinedEntityData
+    public sealed class SystemsOfUnitsData : DefinedEntityData
     {
     }
 }

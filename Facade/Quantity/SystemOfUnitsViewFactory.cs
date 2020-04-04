@@ -8,7 +8,7 @@ namespace Abc.Facade.Quantity
     {
         public static SystemOfUnits Create(SystemOfUnitsView view)
         {
-            var d = new SystemOfUnitsData();
+            var d = new SystemsOfUnitsData();
             Copy.Members(view, d);
             return new SystemOfUnits(d);
         }
