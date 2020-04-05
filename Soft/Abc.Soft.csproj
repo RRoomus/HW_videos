@@ -44,13 +44,4 @@
     <Folder Include="Areas\Quantity\Pages\UnitFactors\" />
     <Folder Include="Areas\Quantity\Pages\SystemsOfUnits\" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Areas\Quantity\Pages\MeasureTerms\Delete.cshtml" />
-    <Content Remove="Areas\Quantity\Pages\MeasureTerms\Details.cshtml" />
-    <Content Remove="Areas\Quantity\Pages\UnitFactors\Delete.cshtml" />
-    <Content Remove="Areas\Quantity\Pages\UnitFactors\Details.cshtml" />
-    <Content Remove="Areas\Quantity\Pages\UnitTerms\Delete.cshtml" />
-    <Content Remove="Areas\Quantity\Pages\UnitTerms\Details.cshtml" />
-    <Content Remove="Areas\Quantity\Pages\SystemsOfUnits\Delete.cshtml" />
-  </ItemGroup>
 </Project>

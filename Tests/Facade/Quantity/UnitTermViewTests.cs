@@ -8,6 +8,14 @@ namespace Abc.Tests.Facade.Quantity
     public class UnitTermViewTests : SealedClassTests<UnitTermView, CommonTermView>
     {
         [TestMethod]
-        public void UnitIdTest() => IsNullableProperty(() => obj.UnitId, x => obj.UnitId = x);
+        public void UnitIdTest() => IsNullableProperty(() => obj.MasterId, x => obj.TermId = x);
+
+        [TestMethod]
+        public void GetIdTest()
+        {
+            var actual = obj.GetId();
+            var expected = $"{obj.MasterId}.{obj.TermId}";
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
