@@ -7,7 +7,7 @@ namespace Abc.Soft.Areas.Quantity.Pages.Units
 {
     public class DeleteModel : UnitsPage
     {
-        public DeleteModel(IUnitsRepository r, IMeasuresRepository m) : base(r, m) { }
+        public DeleteModel(IUnitsRepository r, IMeasuresRepository m, IUnitFactorRepository f, IUnitTermsRepository t) : base(r, m, f, t) { }
 
         public async Task<IActionResult> OnGetAsync(string id, string fixedFilter, string fixedValue)
         {
