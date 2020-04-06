@@ -33,6 +33,9 @@
     <ProjectReference Include="..\Aids\Abc.Aids.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\..\Loeng 50 Testid, Core ja Pages-20200401\Core\Abc.Core.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Quantity\" />

@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using Abc.Data.Quantity;
 using Abc.Domain.Quantity;
 using Abc.Facade.Quantity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Abc.Pages.Quantity
 {
     public class UnitFactorsPage : CommonPage<IUnitFactorRepository, UnitFactor, UnitFactorView, UnitFactorData>
     {
-        protected internal UnitFactorsPage(IUnitFactorRepository r = null) : base(r)
+        protected internal UnitFactorsPage(IUnitFactorRepository r) : base(r)
         {
             PageTitle = "Unit Factors";
         }
